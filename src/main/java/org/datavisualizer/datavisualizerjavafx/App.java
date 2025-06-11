@@ -23,7 +23,8 @@ public class App extends Application {
     public void start(Stage primaryStage) {
 
         // calling the file from local device ( change according to your path)
-        String filePath = "C:\\Users\\User\\OneDrive\\Documents\\NetBeansProjects\\DataVisualizerJavaFX\\src\\main\\java\\org\\datavisualizer\\datavisualizerjavafx\\SurveyData-Q1.csv";
+        String filePath = "C:\\Users\\User\\OneDrive\\Documents\\NetBeansProjects\\DataVisualizerJavaFX\\"
+                + "src\\main\\java\\org\\datavisualizer\\datavisualizerjavafx\\SurveyData-Q6.csv"; // Q# is the number of sheet referenced (change this if you want to check other data sheets (Q1-Q6)
         List<int[]> responses = readCSV(filePath);
 
         if (responses.isEmpty()) {
@@ -147,11 +148,11 @@ public class App extends Application {
                     line.setStroke(Color.GREEN);
                     root.getChildren().add(line);
 
-                    // Compute midpoint for label placement
+                    // label placement
                     double midX = (sourceCircle.getCenterX() + targetCircle.getCenterX()) / 2;
                     double midY = (sourceCircle.getCenterY() + targetCircle.getCenterY()) / 2;
 
-                    // Create edge weight label
+                    // edge weight label
                     Label edgeLabel = new Label(String.valueOf(adjacencyMatrix[i][j]));
                     edgeLabel.setLayoutX(midX);
                     edgeLabel.setLayoutY(midY);
